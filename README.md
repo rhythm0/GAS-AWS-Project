@@ -1,6 +1,9 @@
 # Genomics Annotation Service (GAS)
-This cloud computing project builds a `SaaS` for a `genomics annotation service` (short as 'GAS'). This project primarily serves as a final project for University of Chicago MPCS course. Users can log in on the website, submit genomics related files for annotation, and download the result files once the annotation is completed. Glacier is utilized for result files to archive if the user is not a premium user, and the users can upgrade and downgrade to and from premium users according their needs. In the very end, the project is realized in a distributed system manner and uses a load balancer that allows scaling up and down based on the ongoing annotation workload. The main tool being used is `Flask` and `Boto3`. The cloud resource provider is `AWS`.
-
+This cloud computing project builds a `SaaS` for a `genomics annotation service` (short as 'GAS'). Users can log in on the website, submit genomics related files for annotation, and download the result files once the annotation is completed. Glacier is utilized for result files to archive if the user is not a premium user, and the users can upgrade and downgrade to and from premium users according their needs. In the very end, the project is realized in a distributed system manner and uses a load balancer that allows scaling up and down based on the ongoing annotation workload. The main tool being used is `Flask` and `Boto3`. The cloud resource provider is `AWS`.
+* This project primarily serves as a final project for University of Chicago MPCS course.
+* Author: Alexandra (Siyuan) Qi
+[GitHub Profile](https://github.com/rhythm0)
+  
 # Demo
 A demo for the key processes: 
 * `Premium user` login through Globus, having access to view and download history annotation result files.
