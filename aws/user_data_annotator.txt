@@ -1,0 +1,8 @@
+#!/bin/bash
+aws s3 cp s3://mpcs-cc-students/siyuanq/gas_annotator.zip /home/ec2-user/mpcs-cc
+unzip /home/ec2-user/mpcs-cc/gas_annotator.zip -d /home/ec2-user/mpcs-cc
+chown -R ec2-user:ec2-user /home/ec2-user/mpcs-cc/gas
+chmod +x /home/ec2-user/mpcs-cc/gas/ann/run_ann.sh
+source /home/ec2-user/mpcs-cc/bin/activate
+cd /home/ec2-user/mpcs-cc/gas/ann
+sudo -u ec2-user ./run_ann.sh &
