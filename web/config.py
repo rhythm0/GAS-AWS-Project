@@ -80,11 +80,14 @@ class Config(object):
   # Set validity of pre-signed POST requests (in seconds)
   AWS_SIGNED_REQUEST_EXPIRATION = 60
 
+  # Set validity of pre-signed download request (in seconds)
+  AWS_SIGNED_DOWNLOAD_EXPIRATION = 300
+
   AWS_S3_INPUTS_BUCKET = "mpcs-cc-gas-inputs"
   AWS_S3_RESULTS_BUCKET = "mpcs-cc-gas-results"
   # Set the S3 key (object name) prefix to your CNetID
   # Keep the trailing '/' if using my upload code in views.py
-  AWS_S3_KEY_PREFIX = "<CNetID>/"
+  AWS_S3_KEY_PREFIX = "siyuanq/"
   AWS_S3_ACL = "private"
   AWS_S3_ENCRYPTION = "AES256"
 
@@ -92,15 +95,21 @@ class Config(object):
 
   # Change the ARNs below to reflect your SNS topics
   AWS_SNS_JOB_REQUEST_TOPIC = \
-    "some-arn-job-requests:<CNetID>_job_requests"
+    "arn:aws:sns:us-east-1:659248683008:siyuanq_job_requests"
   AWS_SNS_JOB_COMPLETE_TOPIC = \
-    "some-arn-job-results:<CNetID>_job_results"
+    "arn:aws:sns:us-east-1:659248683008:siyuanq_job_results"
+  
+  AWS_SQS_JOB_ARCHIVE_QUEUE_URL = \
+    "https://sqs.us-east-1.amazonaws.com/659248683008/siyuanq_glacier_archive"
+  AWS_SQS_JOB_RESTORE_QUEUE_URL = \
+    "https://sqs.us-east-1.amazonaws.com/659248683008/siyuanq_glacier_restore"
 
   # Change the table name to your own
-  AWS_DYNAMODB_ANNOTATIONS_TABLE = "<CNetID>_annotations"
+  AWS_DYNAMODB_ANNOTATIONS_TABLE = "siyuanq_annotations"
+  AWS_DYNAMODB_ANNOTATIONS_TABLE_INDEX_NAME = "user_id_index"
 
   # Change the email address to your username
-  MAIL_DEFAULT_SENDER = "<CNetID>@mpcs-cc.com"
+  MAIL_DEFAULT_SENDER = "siyuanq@mpcs-cc.com"
 
   # Time before free user results are archived (in seconds)
   FREE_USER_DATA_RETENTION = 300

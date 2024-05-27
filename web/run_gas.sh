@@ -6,7 +6,7 @@
 
 cd /home/ec2-user/mpcs-cc/gas/web
 source /home/ec2-user/mpcs-cc/gas/web/.env
-[[ -d /home/ec2-user/mpcs-cc/gas/web/log ]] || mkdir /home/ec2-user/gas/web/log
+[[ -d /home/ec2-user/mpcs-cc/gas/web/log ]] || mkdir /home/ec2-user/mpcs-cc/gas/web/log
 if [ ! -e /home/ec2-user/mpcs-cc/gas/web/log/$GAS_LOG_FILE_NAME ]; then
     touch /home/ec2-user/mpcs-cc/gas/web/log/$GAS_LOG_FILE_NAME;
 fi
